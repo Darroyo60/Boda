@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación de Boda</title>
+  <!-- Fuente elegante -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Playfair Display', serif;
+      margin: 0;
+      padding: 0;
+      background: url('fondo-floral.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+      text-align: center;
+    }
+
+    h1, h2, h3 {
+      margin: 10px 0;
+    }
+    .subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1em;      /* más pequeña que los nombres */
+      line-height: 1.6em;    /* espaciado agradable */
+      color: #555;           /* gris suave, no tan fuerte */
+      margin: 15px auto 30px;
+      max-width: 85%;
+      font-weight: 300;      /* delicado */
+      font-style: italic;    /* toque romántico */
+    }
+
+    /* Estilo elegante */
+    .titulo-principal {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5em;
+      margin-top: 30px;
+      color: #4b4b4b;
+    }
+
+    .nombres {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3em;
+      margin: 10px 0 30px;
+      color: #7a7a7a;
+    }
+
+    .subtitle {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+      color: #444;
+    }
+
+    /* Contador */
+    .contador {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px 0;
+    }
+    .contador-item {
+      background: #9fbf9f;
+      padding: 15px;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 1.2em;
+      min-width: 70px;
+      box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+    }
+
+    /* Fecha */
+    .fecha {
+      margin: 40px 0;
+    }
+    .fecha-titulo {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.8em;
+      margin-bottom: 10px;
+      color: #5a5a5a;
+    }
+    .fecha-numero {
+      font-size: 1.8em;
+      font-weight: bold;
+      letter-spacing: 6px;
+      color: #7a7a7a;
+    }
+    .icono-fecha {
+      width: 60px;   /* ancho de la imagen */
+      height: auto;  /* mantiene proporción */
+    }
+    .ubicacion {
+      width: 50px;   /* ancho de la imagen */
+      height: auto;  /* mantiene proporción */
+    }
+
+
+    /* Secciones */
+    .seccion {
+      margin: 40px 0;
+    }
+    .seccion img {
+      width: 70px;
+      margin-bottom: 10px;
+    }
+    .seccion h3 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.4em;
+      margin: 5px 0;
+      color: #4b4b4b;
+    }
+    .seccion p {
+      font-size: 1.1em;
+      color: #555;
+    }
+
+    /* Botón RSVP */
+    .btn-rsvp {
+      display: inline-block;
+      padding: 15px 30px;
+      background: #9fbf9f;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 30px;
+      font-size: 1.2em;
+      transition: 0.3s;
+      margin-top: 20px;
+    }
+    .btn-rsvp:hover {
+      background: #7f9f7f;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Título y nombres -->
+  <h1 class="titulo-principal">Nuestra Boda Civil</h1>
+  <h2 class="nombres">Alejandra & Samuel</h2>
+  
+
+  <!-- Contador -->
+  <div class="contador" id="contador">
+    <div class="contador-item"><span id="dias"></span><br>Días</div>
+    <div class="contador-item"><span id="horas"></span><br>Horas</div>
+    <div class="contador-item"><span id="minutos"></span><br>Minutos</div>
+    <div class="contador-item"><span id="segundos"></span><br>Segundos</div>
+  </div>
+  <p class="subtitle">
+      Hay momentos en la vida que son muy especiales por si<br>
+      solos, pero al compartirlo con personas tan especiales<br>
+      como tú se convierten en momentos imposibles de olvidar
+    </p>
+  <!-- Fecha -->
+  <section class="fecha">
+    <img src="calendario.png" alt="Fecha" class="icono-fecha">
+    <h1 class="fecha-titulo">Fecha</h1>
+    <div class="fecha-numero">15 | Sep | 2025</div>
+  </section>
+
+ <!-- Recepción -->
+  <section class="seccion">
+    <img src="icono-copas.png" alt="Recepción">
+    <h3>Recepción</h3>
+    <p>Salón Real, Av. Amazonas 123, Quito</p>
+  </section>
+
+  <!-- Ceremonia -->
+  <section class="seccion">
+    <img src="ubicación.png" alt="Ubicacion" class="ubicacion">
+    <h3>Ubicación</h3>
+    <p>
+      <a href="https://www.google.com/maps?q=Iglesia+Central+Quito+Ecuador" 
+        target="_blank" 
+        style="color:#555; text-decoration:none;">
+        Iglesia Central - Quito, Ecuador
+      </a>
+    </p>
+  </section>
+
+ 
+
+  <!-- Botón Confirmación -->
+  <a href="https://forms.gle/xxxxx" target="_blank" class="btn-rsvp">Confirmar Asistencia</a>
+
+  <script>
+    // Contador regresivo
+    const fechaBoda = new Date("Sep 15, 2025 17:00:00").getTime();
+
+    const x = setInterval(function() {
+      const ahora = new Date().getTime();
+      const distancia = fechaBoda - ahora;
+
+      const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+      document.getElementById("dias").innerText = dias;
+      document.getElementById("horas").innerText = horas;
+      document.getElementById("minutos").innerText = minutos;
+      document.getElementById("segundos").innerText = segundos;
+
+      if (distancia < 0) {
+        clearInterval(x);
+        document.getElementById("contador").innerHTML = "¡Hoy es el gran día!";
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>
