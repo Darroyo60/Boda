@@ -8,30 +8,33 @@
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Playfair Display', serif;
       margin: 0;
       padding: 0;
-      background: url('fondo-floral.jpg') no-repeat center center fixed;
-      background-size: cover;
+      font-family: 'Playfair Display', serif;
       color: #333;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #f9f9f9;
     }
+
+    .contenedor {
+  width: 100%;
+  max-width: 800px;
+  min-height: 100vh;
+  background: url('fondo.png') no-repeat center center;
+  background-size: cover;
+  text-align: center;
+  padding: 180px 30px 150px; /* arriba - lados - abajo */
+  box-sizing: border-box;
+}
+
 
     h1, h2, h3 {
       margin: 10px 0;
     }
-    .subtitle {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1em;      /* más pequeña que los nombres */
-      line-height: 1.6em;    /* espaciado agradable */
-      color: #555;           /* gris suave, no tan fuerte */
-      margin: 15px auto 30px;
-      max-width: 85%;
-      font-weight: 300;      /* delicado */
-      font-style: italic;    /* toque romántico */
-    }
 
-    /* Estilo elegante */
     .titulo-principal {
       font-family: 'Great Vibes', cursive;
       font-size: 3.5em;
@@ -47,9 +50,12 @@
     }
 
     .subtitle {
+      font-family: 'Cormorant Garamond', serif;
       font-size: 1.2em;
-      margin-bottom: 20px;
-      color: #444;
+      font-style: italic;
+      color: #555;
+      margin: 20px auto;
+      max-width: 85%;
     }
 
     /* Contador */
@@ -58,6 +64,7 @@
       justify-content: center;
       gap: 15px;
       margin: 20px 0;
+      flex-wrap: wrap;
     }
     .contador-item {
       background: #9fbf9f;
@@ -86,14 +93,9 @@
       color: #7a7a7a;
     }
     .icono-fecha {
-      width: 60px;   /* ancho de la imagen */
-      height: auto;  /* mantiene proporción */
+      width: 60px;
+      height: auto;
     }
-    .ubicacion {
-      width: 50px;   /* ancho de la imagen */
-      height: auto;  /* mantiene proporción */
-    }
-
 
     /* Secciones */
     .seccion {
@@ -133,58 +135,58 @@
 </head>
 <body>
 
-  <!-- Título y nombres -->
-  <h1 class="titulo-principal">Nuestra Boda Civil</h1>
-  <h2 class="nombres">Alejandra & Samuel</h2>
-  
+  <div class="contenedor">
+    <!-- Título y nombres -->
+    <h1 class="titulo-principal">Nuestra Boda Civil</h1>
+    <h2 class="nombres">Alejandra & Samuel</h2>
 
-  <!-- Contador -->
-  <div class="contador" id="contador">
-    <div class="contador-item"><span id="dias"></span><br>Días</div>
-    <div class="contador-item"><span id="horas"></span><br>Horas</div>
-    <div class="contador-item"><span id="minutos"></span><br>Minutos</div>
-    <div class="contador-item"><span id="segundos"></span><br>Segundos</div>
-  </div>
-  <p class="subtitle">
+    <!-- Contador -->
+    <div class="contador" id="contador">
+      <div class="contador-item"><span id="dias"></span><br>Días</div>
+      <div class="contador-item"><span id="horas"></span><br>Horas</div>
+      <div class="contador-item"><span id="minutos"></span><br>Minutos</div>
+      <div class="contador-item"><span id="segundos"></span><br>Segundos</div>
+    </div>
+
+    <p class="subtitle">
       Existen momentos en la vida que, por sí mismos, resultan<br>
-      especiales;sin embargo, al compartirlos con personas  <br>
-      tan significativas como tú, se transforman en <br>
+      especiales; sin embargo, al compartirlos con personas<br>
+      tan significativas como tú, se transforman en<br>
       recuerdos inmemorables.
-      
     </p>
-  <!-- Fecha -->
-  <section class="fecha">
-    <img src="calendario.png" alt="Fecha" class="icono-fecha">
-    <h1 class="fecha-titulo">Fecha</h1>
-    <div class="fecha-numero">12 | Sep | 2025</div>
-  </section>
 
-   <!-- Ceremonia -->
-  <section class="seccion">
-    <img src="ceremonia.png" alt="Ubicacion" class="ubicacion">
-    <h3>Ceremonia</h3>
-    <h2>9:00</h2>
-    <p>
-      <a href="https://www.google.com/maps?q=Iglesia+Central+Quito+Ecuador" 
-        target="_blank" 
-        style="color:#555; text-decoration:none;">
-        Agencia Matriz del Registro Civil - Naciones Unidas
-      </a>
-    </p>
-  </section>
+    <!-- Fecha -->
+    <section class="fecha">
+      <img src="calendario.png" alt="Fecha" class="icono-fecha">
+      <h1 class="fecha-titulo">Fecha</h1>
+      <div class="fecha-numero">12 | Sep | 2025</div>
+    </section>
 
- <!-- Recepción -->
-  <section class="seccion">
-    <img src="icono-copas.png" alt="Recepción">
-    <h3>Recepción</h3>
-    <h2>17:00</h2>
-    <p>Conjunto Torres de Aranjuez(Av.Velasco Ibarra)</p>
-  </section>
+    <!-- Ceremonia -->
+    <section class="seccion">
+      <img src="ceremonia.png" alt="Ubicacion" class="ubicacion">
+      <h3>Ceremonia</h3>
+      <h2>9:00</h2>
+      <p>
+        <a href="https://www.google.com/maps?q=Iglesia+Central+Quito+Ecuador" 
+          target="_blank" 
+          style="color:#555; text-decoration:none;">
+          Agencia Matriz del Registro Civil - Naciones Unidas
+        </a>
+      </p>
+    </section>
 
- 
+    <!-- Recepción -->
+    <section class="seccion">
+      <img src="icono-copas.png" alt="Recepción">
+      <h3>Recepción</h3>
+      <h2>18:00</h2>
+      <p>Conjunto Torres de Aranjuez (Av. Velasco Ibarra)</p>
+    </section>
 
-  <!-- Botón Confirmación -->
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSewEK8glzpf0Kxpf1wY-ZE_ReCLpVnvUFFBQAYNQdg6MlAVhA/viewform?usp=header" target="_blank" class="btn-rsvp">Confirmar Asistencia</a>
+    <!-- Botón Confirmación -->
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSewEK8glzpf0Kxpf1wY-ZE_ReCLpVnvUFFBQAYNQdg6MlAVhA/viewform?usp=header" target="_blank" class="btn-rsvp">Confirmar Asistencia</a>
+  </div>
 
   <script>
     // Contador regresivo
